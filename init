@@ -1,0 +1,20 @@
+#!/usr/bin/python
+
+import os
+
+def install():
+	os.popen("sudo mkdir -p /usr/local/python/lib")
+	plib=os.popen("sudo ls -la /usr/local/python/lib").read()
+	#os.popen("sudo mv hmtLib/ /usr/local/python/lib")
+	#os.popen("sudo chmod +x hmt && mv hmt /bin")
+	os.popen("sudo export PYTHONPATH=/usr/local/python/lib")
+
+def main():
+	user=os.popen("whoami").read()[:-1]
+	if user=="root":
+		install()
+	else:
+		print("Try sudo ./init")
+
+if __name__=='__main__':
+	main()

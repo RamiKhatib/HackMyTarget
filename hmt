@@ -1,0 +1,18 @@
+#!/usr/bin/python
+
+#### HackMyTarget
+##
+## Description:
+
+### Imports ###
+
+import sys
+from hmtLib.ctrl import Ctrl
+
+###############
+
+# Entry point
+
+if __name__ == '__main__':
+	ctrl=Ctrl(sys.argv)
+	ctrl.start()
