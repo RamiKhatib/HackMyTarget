@@ -1,4 +1,5 @@
 import os
+from console import Console
 
 class Ctrl:
 	def __init__(self,args):
@@ -11,10 +12,14 @@ class Ctrl:
 			self.usage()
 		else:
 			self.args.pop(0)
-		self.checkArgs()
+			self.checkArgs()
 
 	def checkArgs(self):
-		pass			# TODO
+		if "console" in self.args:
+			self.console=Console()
+			self.console.start()
+		else:
+			pass		# TODO
 
 	def usage(self):
 		print("Usage:")		# TODO
